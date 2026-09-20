@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="漫画补档网提供全网漫画作品补全阅读服务，涵盖日漫、韩漫、国漫等热门题材，支持在线阅读、章节更新提醒及作品搜索，助您找回错过的精彩剧情。">
+    <meta name="keywords" content="漫画补档,漫画补全,在线阅读,补番,动漫资源">
+    <title>漫画补档-全网热门作品补全阅读与资源聚合平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --accent-color: #1e90ff;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-sub: #747d8c;
+            --border-radius: 8px;
+            --spacing: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: var(--bg-color);
+            border-radius: 20px;
+            padding: 4px 12px;
+            align-items: center;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 6px;
+            width: 150px;
+            color: var(--text-main);
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-sub);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff4757 0%, #ff6b81 100%);
+            padding: 40px var(--spacing);
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .tag:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 24px var(--spacing);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e1e1e1;
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .more-link {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        .more-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .grid.large {
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        }
+
+        /* Card Component */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        }
+
+        .card-cover {
+            position: relative;
+            padding-top: 140%; /* Aspect ratio for covers */
+            background-color: #ddd;
+            overflow: hidden;
+        }
+
+        .card-cover img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-cover img {
+            transform: scale(1.05);
+        }
+
+        .card-status {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .status-completed {
+            background: #2ed573;
+        }
+
+        .status-updating {
+            background: var(--primary-color);
+        }
+
+        .card-body {
+            padding: 12px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--text-main);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            margin-bottom: 8px;
+        }
+
+        .card-tags {
+            margin-top: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .mini-tag {
+            font-size: 0.7rem;
+            background: var(--bg-color);
+            color: var(--text-sub);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Priority Section */
+        .priority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .priority-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 16px;
+            display: flex;
+            gap: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .priority-cover {
+            width: 100px;
+            height: 140px;
+            flex-shrink: 0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .priority-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .priority-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .priority-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .priority-desc {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--bg-color);
+            border-radius: 3px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        .progress-text {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            margin-top: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: white;
+            padding: 32px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .guide-item h3 {
+            margin-bottom: 12px;
+            color: var(--secondary-color);
+        }
+
+        .guide-item p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .step-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .step-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #a4b0be;
+            padding: 40px var(--spacing) 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #57606f;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 12px;
+            }
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 10px;
+                overflow-x: auto;
+            }
+            nav ul {
+                justify-content: flex-start;
+                gap: 16px;
+                padding-bottom: 4px;
+            }
+            .search-box {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .priority-grid {
+                grid-template-columns: 1fr;
+            }
+            .priority-card {
+                flex-direction: column;
+            }
+            .priority-cover {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                漫画<span>补档</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">日漫专区</a></li>
+                    <li><a href="#">韩漫专区</a></li>
+                    <li><a href="#">国漫专区</a></li>
+                    <li><a href="#">近期完结</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索作品名称...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>补全您的阅读清单</h1>
+        <p>这里收录了全网停更、腰斩、绝版及更新缓慢的漫画作品，助您找回错过的精彩剧情。</p>
+        <div class="hero-tags">
+            <span class="tag">🔥 热门补档</span>
+            <span class="tag">📝 全本推荐</span>
+            <span class="tag">⚡ 更新加速</span>
+            <span class="tag">🏷️ 类型筛选</span>
+        </div>
+    </section>
+
+    <main>
+        <!-- Priority Section: Recently Updated / High Priority -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">最新补档更新</h2>
+                <a href="#" class="more-link">查看全部 &rarr;</a>
+            </div>
+            <div class="grid large priority-grid">
+                <article class="priority-card">
+                    <div class="priority-cover">
+                        <img src="https://picsum.photos/seed/manga1/200/280" alt="漫画封面">
+                    </div>
+                    <div class="priority-info">
+                        <div>
+                            <h3 class="priority-title">鬼灭之刃外传：无限列车篇</h3>
+                            <p class="priority-desc">炭治郎一行人登上无限列车，与上弦之鬼展开殊死搏斗。目前漫画已完结，提供高清补档。</p>
+                        </div>
+                        <div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%;"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span>状态：已完结</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="priority-card">
+                    <div class="priority-cover">
+                        <img src="https://picsum.photos/seed/manga2/200/280" alt="漫画封面">
+                    </div>
+                    <div class="priority-info">
+                        <div>
+                            <h3 class="priority-title">一拳超人 重制版</h3>
+                            <p class="priority-desc">村田版一拳超人，随着剧情推进，怪人协会篇、英雄协会篇逐步展开。目前更新至最新章节。</p>
+                        </div>
+                        <div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span>进度：85%</span>
+                                <span>更新中</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="priority-card">
+                    <div class="priority-cover">
+                        <img src="https://picsum.photos/seed/manga3/200/280" alt="漫画封面">
+                    </div>
+                    <div class="priority-info">
+                        <div>
+                            <h3 class="priority-title">进击的巨人 最终季</h3>
+                            <p class="priority-desc">人类与巨人的最终决战，艾伦与伙伴们的宿命抉择。全篇完整补档，支持手机阅读。</p>
+                        </div>
+                        <div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%;"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span>状态：已完结</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="priority-card">
+                    <div class="priority-cover">
+                        <img src="https://picsum.photos/seed/manga4/200/280" alt="漫画封面">
+                    </div>
+                    <div class="priority-info">
+                        <div>
+                            <h3 class="priority-title">海贼王</h3>
+                            <p class="priority-desc">路飞带领草帽海贼团寻找大秘宝，世界政府与四皇的博弈。支持多语言字幕与离线下载。</p>
+                        </div>
+                        <div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%;"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span>进度：92%</span>
+                                <span>更新中</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Completed Works Section -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">近期完结作品</h2>
+                <a href="#" class="more-link">查看全部 &rarr;</a>
+            </div>
+            <div class="grid large">
+                <article class="card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/comp1/300/420" alt="作品封面">
+                        <span class="card-status status-completed">已完结</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">葬送的芙莉莲</h3>
+                        <div class="card-meta">作者：山田钟人 / 佐藤上</div>
+                        <div class="card-tags">
+                            <span class="mini-tag">奇幻</span>
+                            <span class="mini-tag">冒险</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/comp2/300/420" alt="作品封面">
+                        <span class="card-status status-completed">已完结</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">咒术回战</h3>
+                        <div class="card-meta">作者：芥见下下</div>
+                        <div class="card-tags">
+                            <span class="mini-tag">热血</span>
+                            <span class="mini-tag">战斗</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/comp3/300/420" alt="作品封面">
+                        <span class="card-status status-completed">已完结</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">电锯人</h3>
+                        <div class="card-meta">作者：藤本树</div>
+                        <div class="card-tags">
+                            <span class="mini-tag">猎奇</span>
+                            <span class="mini-tag">科幻</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/comp4/300/420" alt="作品封面">
+                        <span class="card-status status-completed">已完结</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">蓝色监狱</h3>
+                        <div class="card-meta">作者：金城宗幸 / 楳太一</div>
+                        <div class="card-tags">
+                            <span class="mini-tag">运动</span>
+                            <span class="mini-tag">竞技</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section class="guide-section">
+            <div class="section-header">
+                <h2 class="section-title">补档指南</h2>
+            </div>
+            <div class="guide-grid">
+                <div class="guide-item">
+                    <h3>📖 如何补档一部作品？</h3>
+                    <p>本站汇集了全网资源，您可以通过顶部的搜索框输入作品名称，或点击热门标签快速找到目标作品。支持按类型、状态筛选。</p>
+                    <ul class="step-list">
+                        <li>输入作品名称进行搜索</li>
+                        <li>选择您偏好的阅读源（高清/稳定）</li>
+                        <li>点击“开始阅读”即可连续追更</li>
+                    </ul>
+                </div>
+                <div class="guide-item">
+                    <h3>⚠️ 补档注意事项</h3>
+                    <p>部分经典作品可能因版权原因暂时无法提供，或更新速度较慢。请尊重创作者的劳动成果，支持正版渠道。</p>
+                    <ul class="step-list">
+                        <li>检查作品状态（连载中/已完结）</li>
+                        <li>注意更新频率，部分作品可能周更</li>
+                        <li>如遇链接失效，请使用站内反馈功能</li>
+                    </ul>
+                </div>
+                <div class="guide-item">
+                    <h3>🎯 推荐阅读策略</h3>
+                    <p>对于腰斩或长期停更的作品，建议一次性阅读全本，体验完整的剧情闭环，避免因断更影响阅读体验。</p>
+                    <ul class="step-list">
+                        <li>优先选择“已完结”标签下的作品</li>
+                        <li>关注“近期完结”栏目获取最新资源</li>
+                        <li>使用收藏功能追踪更新动态</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于漫画补档</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    漫画补档网是一个专注于漫画资源聚合与整理的平台。我们致力于帮助漫迷找回那些因各种原因中断阅读的经典作品，提供稳定、流畅的阅读体验。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">热门推荐</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">排行榜单</a></li>
+                    <li><a href="#">分类浏览</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">使用指南</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系我们</a></li>
+                    <li><a href="#">加入我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 漫画补档网. All Rights Reserved. 本站内容仅供学习交流使用，请于下载后24小时内删除。</p>
+        </div>
+    </footer>
+
+</body>
+                              </html>
