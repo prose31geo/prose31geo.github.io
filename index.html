@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>尊老爱幼的名言 - 中华传统美德经典语录与智慧传承</title>
+    <meta name="description" content="本站汇集了大量关于尊老爱幼的名言警句、经典语录及成语典故。内容涵盖儒家思想、现代名言及通俗谚语，旨在弘扬中华民族传统美德，提供教育、演讲及写作素材。">
+    <meta name="keywords" content="尊老爱幼的名言, 中华传统美德, 尊老爱幼语录, 孝道名言, 传统文化">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513; /* SaddleBrown */
+            --secondary-color: #F5DEB3; /* Wheat */
+            --accent-color: #D2691E; /* Chocolate */
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #F9F7F2;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--white);
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 3rem 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Quote Grid */
+        .quote-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .quote-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent-color);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .quote-content {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 0.95rem;
+        }
+
+        .quote-source {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+            font-style: normal;
+        }
+
+        /* Featured Section */
+        .featured-section {
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 4rem;
+        }
+
+        .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: var(--text-light);
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .category-tag {
+            padding: 0.5rem 1.5rem;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-weight: 500;
+            cursor: default;
+        }
+
+        /* List Style */
+        .classic-list {
+            list-style: none;
+        }
+
+        .classic-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .classic-list li:last-child {
+            border-bottom: none;
+        }
+
+        .classic-list strong {
+            color: var(--primary-color);
+            min-width: 200px;
+            display: inline-block;
+        }
+
+        .classic-list span {
+            color: var(--text-light);
+        }
+
+        /* Explanation Section */
+        .explanation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .explanation-item h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .explanation-item p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 1.25rem;
+            background-color: var(--bg-light);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.25rem;
+        }
+
+        .faq-answer p {
+            padding-bottom: 1.25rem;
+            color: var(--text-light);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Approximate max height */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 3rem 1.5rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .header-container { flex-direction: column; gap: 1rem; }
+            nav ul { gap: 1rem; font-size: 0.9rem; }
+            .explanation-grid { grid-template-columns: 1fr; }
+            .classic-list strong { min-width: 100%; margin-bottom: 0.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span>❤</span> 中华美德名言库
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#quotes" class="active">经典语录</a></li>
+                    <li><a href="#concepts">内涵释义</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>尊老爱幼的名言</h1>
+        <p>传承千年智慧，弘扬传统美德。这里汇集了关于尊敬长辈、爱护晚辈的经典名言与深刻释义。</p>
+    </section>
+
+    <main>
+        <!-- Section 1: Featured Quotes -->
+        <section id="quotes">
+            <div class="section-title">
+                <h2>经典名言精选</h2>
+                <p>流传千古的智慧结晶，指引道德修养的方向</p>
+            </div>
+            
+            <div class="quote-grid">
+                <!-- Card 1 -->
+                <article class="quote-card">
+                    <div>
+                        <p class="quote-content">“老吾老，以及人之老；幼吾幼，以及人之幼。”</p>
+                    </div>
+                    <div class="quote-author">
+                        孟子
+                        <span class="quote-source">《孟子·梁惠王上》</span>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="quote-card">
+                    <div>
+                        <p class="quote-content">“树欲静而风不止，子欲养而亲不待。”</p>
+                    </div>
+                    <div class="quote-author">
+                        汉·韩婴《韩诗外传》
+                        <span class="quote-source">劝孝名篇</span>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="quote-card">
+                    <div>
+                        <p class="quote-content">“百善孝为先，万恶淫为源。常存仁孝心，则天下凡不可为者，皆不忍为。”</p>
+                    </div>
+                    <div class="quote-author">
+                        王永彬
+                        <span class="quote-source">《围炉夜话》</span>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="quote-card">
+                    <div>
+                        <p class="quote-content">“要知父母恩，怀里抱儿身。欲报三春晖，寸草心难报。”</p>
+                    </div>
+                    <div class="quote-author">
+                        孟郊
+                        <span class="quote-source">《游子吟》</span>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="quote-card">
+                    <div>
+                        <p class="quote-content">“敬老爱老，是中华民族的传统美德，也是社会文明进步的重要标志。”</p>
+                    </div>
+                    <div class="quote-author">
+                        通用格言
+                        <span class="quote-source">现代社会共识</span>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="quote-card">
+                    <div>
+                        <p class="quote-content">“爱人者，人恒爱之；敬人者，人恒敬之。”</p>
+                    </div>
+                    <div class="quote-author">
+                        孟子
+                        <span class="quote-source">《孟子·离娄下》</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 2: Featured Content & List -->
+        <section id="concepts" class="featured-section">
+            <div class="section-title">
+                <h2>名言内涵与分类</h2>
+            </div>
+            
+            <p class="intro-text">“尊老爱幼”是中国传统文化中极为重要的伦理规范。它不仅是家庭和睦的基石，也是社会和谐的润滑剂。以下将名言按侧重点进行了分类整理。</p>
+
+            <div class="categories">
+                <span class="category-tag">孝道篇</span>
+                <span class="category-tag">仁爱篇</span>
+                <span class="category-tag">传承篇</span>
+                <span class="category-tag">社会篇</span>
+            </div>
+
+            <ul class="classic-list">
+                <li>
+                    <strong>关于“孝”：</strong>
+                    <span>“孝子之至，莫大乎尊亲。”——《孟子》</span>
+                </li>
+                <li>
+                    <strong>关于“老幼”：</strong>
+                    <span>“老吾老，以及人之老；幼吾幼，以及人之幼。”——《孟子》</span>
+                </li>
+                <li>
+                    <strong>关于“感恩”：</strong>
+                    <span>“鸦有反哺之义，羊有跪乳之恩。”——《增广贤文》</span>
+                </li>
+                <li>
+                    <strong>关于“仁爱”：</strong>
+                    <span>“仁者爱人，有礼者敬人。”——《孟子》</span>
+                </li>
+                <li>
+                    <strong>关于“教导”：</strong>
+                    <span>“教妇初来，教儿婴孩。”——颜之推《颜氏家训》</span>
+                </li>
+                <li>
+                    <strong>关于“和谐”：</strong>
+                    <span>“家和万事兴。”——传统谚语</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Section 3: Detailed Explanation -->
+        <section class="explanation-grid">
+            <div class="explanation-item">
+                <h3>何为“尊老”？</h3>
+                <p>尊老即尊敬长辈。这包含了赡养父母、尊敬师长、关爱社区中老年人等多层含义。在古代，这被视为“孝”的直接体现；在现代，这更多体现为一种社会公德和对历史经验的尊重。</p>
+                <p>名言“树欲静而风不止，子欲养而亲不待”警示我们，尽孝要及时，因为生命是不可逆的。</p>
+            </div>
+            <div class="explanation-item">
+                <h3>何为“爱幼”？</h3>
+                <p>爱幼即爱护晚辈。这既包括父母对子女的养育与教导，也包括社会对儿童权益的保护。古人云“教妇初来，教儿婴孩”，强调早期教育的重要性。</p>
+                <p>名言“老吾老，以及人之幼”进一步升华了这一概念，主张将对他人的关爱推己及人，建立普遍的仁爱之心。</p>
+            </div>
+        </section>
+
+        <!-- Section 4: FAQ -->
+        <section id="faq" class="faq-container">
+            <div class="section-title">
+                <h2>常见问题 (FAQ)</h2>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">“尊老爱幼”在现代社会有什么具体表现？</div>
+                <div class="faq-answer">
+                    <p>在现代社会，尊老爱幼体现在公共交通工具上的主动让座、社区中的互助服务、对儿童安全的关注以及法律对老年人权益的保障等方面。它是一种将传统美德转化为具体社会行为的体现。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">除了引用名言，我们还能怎么做？</div>
+                <div class="faq-answer">
+                    <p>名言是思想的指引，行动是道德的实践。我们可以在日常生活中多倾听长辈的意见，耐心教导孩子正确的价值观，参与志愿服务，用实际行动去诠释这些名言的深刻含义。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">为什么这些名言至今仍有教育意义？</div>
+                <div class="faq-answer">
+                    <p>因为这些名言触及了人际关系中最核心的“爱与尊重”。无论时代如何变迁，家庭作为社会的基本单元，其内部的和谐与代际之间的理解永远是维系社会稳定的重要因素。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于本站</h4>
+                <p>本站致力于收集和传播中华传统文化中的经典名言，帮助大众在快节奏的现代生活中重温传统美德，寻找精神寄托。</p>
+            </div>
+            <div class="footer-col">
+                <h4>栏目导航</h4>
+                <ul>
+                    <li><a href="#quotes">经典语录</a></li>
+                    <li><a href="#concepts">内涵释义</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>相关主题</h4>
+                <ul>
+                    <li><a href="#">中华传统文化</a></li>
+                    <li><a href="#">家风家训</a></li>
+                    <li><a href="#">传统美德故事</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 中华美德名言库 版权所有. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 手风琴交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
