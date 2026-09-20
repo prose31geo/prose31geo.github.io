@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小宝闯情关 - 经典武侠言情漫画全集免费阅读</title>
+    <meta name="description" content="小宝闯情关漫画在线阅读平台，提供高清正版漫画、角色图鉴、剧情解析及阅读指南。全集连载中，支持手机、平板、电脑多端同步阅读。">
+    <meta name="keywords" content="小宝闯情关, 漫画, 在线阅读, 武侠言情, 漫画推荐, 漫画库">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513; /* 鞍褐色，武侠感 */
+            --secondary-color: #D2691E; /* 巧克力色 */
+            --bg-color: #FDFBF7; /* 米白色纸张感 */
+            --card-bg: #FFFFFF;
+            --text-main: #333333;
+            --text-light: #666666;
+            --accent-gold: #DAA520;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(139, 69, 19, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            background: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--text-main);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, #FDFBF7 0%, #F3E5DC 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: rgba(139, 69, 19, 0.1);
+            color: var(--secondary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* 内容区块 */
+        section {
+            padding: 40px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 12px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: var(--text-main);
+        }
+
+        .section-more {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* 漫画列表 Grid */
+        .manga-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .manga-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .manga-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(139, 69, 19, 0.15);
+        }
+
+        .card-cover {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background-color: #eee;
+            position: relative;
+        }
+        
+        .card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-status {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* 特色介绍区 */
+        .intro-section {
+            background-color: white;
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .intro-text h2 {
+            font-size: 28px;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .intro-text p {
+            margin-bottom: 16px;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .intro-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--bg-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* 阅读指南/FAQ */
+        .guide-section {
+            background-color: #F9F4EF;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .guide-card {
+            background: white;
+            padding: 24px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .guide-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .guide-card ul {
+            padding-left: 20px;
+        }
+
+        .guide-card li {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            list-style-type: disc;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2C2C2C;
+            color: #ccc;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand h4 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .footer-links ul {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 13px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 12px 0;
+                gap: 12px;
+            }
+            
+            nav ul {
+                gap: 16px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .intro-content {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>漫画</span> 小宝闯情关
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">排行榜</a></li>
+                    <li><a href="#">分类</a></li>
+                    <li><a href="#">更新</a></li>
+                    <li><a href="#">订阅</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">🔍</button>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>小宝闯情关</h1>
+            <p>一段跨越江湖恩怨的绝世情缘，看主角如何拨开重重迷雾，在爱恨纠葛中书写属于自己的传奇篇章。</p>
+            <div class="hero-tags">
+                <span class="tag">武侠</span>
+                <span class="tag">言情</span>
+                <span class="tag">古装</span>
+                <span class="tag">连载中</span>
+            </div>
+            <a href="#latest" class="btn-primary">立即开始阅读</a>
+        </div>
+    </section>
+
+    <!-- 作品简介 -->
+    <section class="intro-section">
+        <div class="container intro-content">
+            <div class="intro-text">
+                <h2>剧情简介</h2>
+                <p><strong>小宝闯情关</strong>是一部融合了江湖热血与细腻情感的古装武侠漫画。故事围绕主角“小宝”的成长展开，他本是一介懵懂少年，因一场意外卷入了武林正邪两派的纷争。</p>
+                <p>在闯荡江湖的过程中，小宝结识了各路豪杰，也经历了生离死别。他不仅要面对强敌环伺的生存挑战，更要解开身世之谜，面对内心深处的情感抉择。是报恩还是复仇？是爱情还是责任？每一个选择都将决定他最终的命运走向。</p>
+                
+                <div class="intro-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">1</span>
+                        <span>高清全彩漫画</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">2</span>
+                        <span>连载更新稳定</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">3</span>
+                        <span>角色设定丰富</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">4</span>
+                        <span>沉浸式阅读体验</span>
+                    </div>
+                </div>
+            </div>
+            <div class="intro-visual">
+                <!-- 占位图，模拟漫画封面 -->
+                <img src="https://picsum.photos/seed/manga_hero/500/600.jpg" alt="小宝闯情关漫画封面" style="width: 100%; border-radius: 8px; box-shadow: var(--shadow);">
+            </div>
+        </div>
+    </section>
+
+    <!-- 最新章节 -->
+    <section id="latest" class="container">
+        <div class="section-header">
+            <h2 class="section-title">最新章节</h2>
+            <a href="#" class="section-more">查看全部 →</a>
+        </div>
+        <div class="manga-grid">
+            <!-- 章节 1 -->
+            <article class="manga-card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/ch1/300/450.jpg" alt="第1话 少年初入江湖">
+                    <span class="card-status">最新</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">第1话 少年初入江湖</h3>
+                    <div class="card-meta">
+                        <span>更新于 2天前</span>
+                        <span>12.5万次阅读</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 章节 2 -->
+            <article class="manga-card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/ch2/300/450.jpg" alt="第2话 偶遇红衣女侠">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">第2话 偶遇红衣女侠</h3>
+                    <div class="card-meta">
+                        <span>更新于 5天前</span>
+                        <span>10.2万次阅读</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 章节 3 -->
+            <article class="manga-card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/ch3/300/450.jpg" alt="第3话 青梅竹马的秘密">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">第3话 青梅竹马的秘密</h3>
+                    <div class="card-meta">
+                        <span>更新于 1周前</span>
+                        <span>9.8万次阅读</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 章节 4 -->
+            <article class="manga-card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/ch4/300/450.jpg" alt="第4话 暗流涌动">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">第4话 暗流涌动</h3>
+                    <div class="card-meta">
+                        <span>更新于 1周前</span>
+                        <span>8.5万次阅读</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 阅读指南 -->
+    <section class="guide-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">阅读指南</h2>
+            </div>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <h3>📖 如何开始阅读</h3>
+                    <ul>
+                        <li>点击任意章节封面进入阅读界面。</li>
+                        <li>支持左右滑动或点击翻页按钮。</li>
+                        <li>电脑端支持键盘左右键翻页。</li>
+                    </ul>
+                </div>
+                <div class="guide-card">
+                    <h3>⚠️ 阅读提示</h3>
+                    <ul>
+                        <li>本站所有漫画资源均来自互联网。</li>
+                        <li>请勿将本站内容用于商业用途。</li>
+                        <li>如发现侵权请联系我们删除。</li>
+                    </ul>
+                </div>
+                <div class="guide-card">
+                    <h3>🆘 常见问题</h3>
+                    <ul>
+                        <li>为什么看不了图片？请检查网络。</li>
+                        <li>如何订阅更新？点击右上角订阅。</li>
+                        <li>推荐使用Chrome浏览器获得最佳体验。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>小宝闯情关漫画</h4>
+                    <p style="font-size: 14px; line-height: 1.8; color: #999;">
+                        专注提供最优质的武侠言情漫画在线阅读服务。<br>
+                        让阅读成为一种享受，让故事触动人心。
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">广告合作</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">用户协议</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 小宝闯情关漫画阅读网 版权所有
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
